@@ -26,8 +26,8 @@
 		  <div class="container">
 		    <nav class="navbar navbar-expand-lg navbar-dark">
 		      <a class="navbar-brand" href="../../index.html">
-		        <img class="navbar-logo navbar-logo-light" src="../../assets/images/demo/logo/logo-light.svg" alt="Logo">
-		        <img class="navbar-logo navbar-logo-dark" src="../../assets/images/demo/logo/logo-dark.svg" alt="Logo">
+            <%= image_tag "demo/logo/logo-light.svg", :class => "navbar-logo navbar-logo-light" %>
+            <%= image_tag "demo/logo/logo-dark.svg", :class => "navbar-logo navbar-logo-dark" %>
 		      </a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
 
@@ -132,7 +132,7 @@
 		  </div>
 		</header>
 		<!-- header -->
-
+ 
 
     <%= yield %>
     <!-- footer -->
@@ -153,7 +153,7 @@
 		        </ul>
 		      </div>
 		      <div class="col-md-2 text-center">
-		      	<img class="logo-sm" src="../../assets/images/demo/logo/logo-light.svg" alt="Logo">
+            <%= image_tag "demo/logo/logo-light.svg", :class => "logo-sm" %>
 		      </div>
 		      <div class="col-md-5 text-center text-md-right">
 		        <ul class="socials">
@@ -168,8 +168,8 @@
 		</footer>
 		<!-- / footer -->
 
-		<script src="../../assets/javascripts/vendor.js"></script>
-		<script src="../../assets/javascripts/app.js"></script>
+<!-- 		<script src="../../assets/javascripts/vendor.js"></script>
+		<script src="../../assets/javascripts/app.js"></script> -->
 
 	</body>
 </html>
