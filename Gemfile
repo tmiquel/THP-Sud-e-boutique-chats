@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+source 'http://rubygems.org'
+git_source(:github) { |repo| "http://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
@@ -70,3 +70,4 @@ gem 'devise'
 gem 'stripe'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'aws-sdk-s3', require: false
