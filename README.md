@@ -16,8 +16,9 @@ Participants
 ==========
 
  * Auguste Nganta
- * Dimitri Gaillot (test push sub branch product)
+ * Dimitri Gaillot (sub branch product)
  * Amine Sanhaji
  * Rémy Aubert
  * Nicolas Bouju
+
 

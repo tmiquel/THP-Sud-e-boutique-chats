@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>CatPicsShop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="utf-8">
+
+    <!-- emplacement call bootstrap -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <!-- emplacement éléments bootstrap, ex : navbar-->
+    
+    <div class="container">
     <%= yield %>
+    </div>
+
+    <footer class="footer">
+        <span class="text-muted">Team THP Marseille-Nice.</span>
+    </footer>
   </body>
 </html>
