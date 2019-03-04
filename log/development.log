@@ -29479,3 +29479,6 @@ FOREIGN KEY ("blob_id")
   ↳ db/seeds.rb:38
   [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
