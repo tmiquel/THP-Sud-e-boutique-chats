@@ -70,12 +70,6 @@ gem 'dotenv-rails'
 gem 'mini_racer'
 gem 'execjs'
 gem 'devise'
-gem 'stripe'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
-<<<<<<< HEAD
 gem 'aws-sdk-s3', require: false
-=======
-gem 'factory_bot_rails'
-gem 'dotenv-rails'
->>>>>>> development

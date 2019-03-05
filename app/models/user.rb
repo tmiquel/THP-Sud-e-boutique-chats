@@ -5,11 +5,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-<<<<<<< HEAD
-  has_one_attached :profile_picture
-  
-end
-=======
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	has_many :carts, foreign_key: 'owner_id'
@@ -22,4 +17,3 @@ private
   end
 
 end
->>>>>>> development
