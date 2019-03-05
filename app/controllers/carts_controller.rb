@@ -5,6 +5,8 @@ class CartsController < ApplicationController
   def show
 
 	@cart = Cart.find(params[:id])
+	@cat = CatPicture.find(params[:id])
+	#@cart.items.each do |item| 
 
   end
 

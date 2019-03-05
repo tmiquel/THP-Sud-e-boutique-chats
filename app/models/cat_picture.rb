@@ -1,7 +1,8 @@
 class CatPicture < ApplicationRecord
-	validates :title, presence: true
-	validates :price, presence: true
-	validate :valid_price
+	has_one_attached :cat_pic
+	#validates :title, presence: true
+	#validates :price, presence: true
+	#validate :valid_price
 	has_many :cat_pic_tags
 	has_many :single_cart_pics
 
