@@ -1,7 +1,7 @@
 class SingleCartPic < ApplicationRecord
 	belongs_to :cart
 	belongs_to :cat_picture
-	validate :no_single_cart_pic_ducplicata
+	validate :no_single_cart_pic_duplicata
 
 private
   def no_single_cart_pic_duplicata
