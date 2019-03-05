@@ -11,12 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
 
- *= require_self
- *= require ./scss/_variables
  *= require_tree .
+ *= require_self
 
- *= require_directory ./css
- *= require_directory ./scss
+ *= require vendor
+ *= require assets/style
 
 
 
