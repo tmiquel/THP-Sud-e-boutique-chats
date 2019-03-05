@@ -60,20 +60,18 @@ ActiveRecord::Schema.define(version: 2019_03_04_120312) do
   end
 
   create_table "purchases", force: :cascade do |t|
-    t.bigint "single_cart_pic_id"
-    t.integer "quantities"
+    t.bigint "cart_id"
     t.datetime "purchase_date"
     t.string "stripe_customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["single_cart_pic_id"], name: "index_purchases_on_single_cart_pic_id"
+    t.index ["cart_id"], name: "index_purchases_on_cart_id"
   end
 
   create_table "single_cart_pics", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "cat_picture_id"
-    t.integer "quantities"
-    t.datetime "purchase_date"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_single_cart_pics_on_cart_id"
@@ -99,4 +97,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_120312) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
