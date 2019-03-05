@@ -36317,3 +36317,429 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:33:52 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 326ms (Views: 304.5ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-05 17:34:14 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2xwGKrTL1MqwnW5S2qnW6EF3r09zF2gb8Ctgm/UW/GeFudAcAy4ZOR2qVU3TGgIlAnY7v7aNY0JY5+jg8Ven2A==", "user"=>{"email"=>"asaakira@yopmail.com", "first_name"=>"Asaakira", "last_name"=>"Lastname", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asaakira@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 205ms (Views: 22.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-05 17:34:43 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yVdgLmkBgzS3RH1PjhseZ4vsl2TH/b0nn1SIRHMFBGtgIu2DkHL/3/qKuo3i7i03S4mrVaF/a02sdpaFY1Prg==", "user"=>{"email"=>"miamalkova@yopmail.com", "first_name"=>"Asaakira", "last_name"=>"Lastname", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "miamalkova@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Asaakira"], ["last_name", "Lastname"], ["email", "miamalkova@yopmail.com"], ["encrypted_password", "$2a$11$LkATGFnpsZLdQ8XD44c5k.OOTRPVrU6LPTFEzGQLrT1j3oFuSAx76"], ["created_at", "2019-03-05 16:34:44.078013"], ["updated_at", "2019-03-05 16:34:44.078013"]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/registration_confirm.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.html.erb within layouts/mailer (0.5ms)
+  Rendering user_mailer/registration_confirm.text.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.text.erb within layouts/mailer (0.3ms)
+UserMailer#registration_confirm: processed outbound mail in 27.4ms
+Sent mail to miamalkova@yopmail.com (45.9ms)
+Date: Tue, 05 Mar 2019 17:34:44 +0100
+From: noreply@cat-e-store.com
+To: miamalkova@yopmail.com
+Message-ID: <5c7ea5241e30c_21ad2ac2b1160ec4436b0@stug-SATELLITE-S70-B.mail>
+Subject: Welcome to our community
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c7ea5241d2ba_21ad2ac2b1160ec443547";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c7ea5241d2ba_21ad2ac2b1160ec443547
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Bienvenue =C3=A0 toi Asaakira.=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.=0D
+=0D
+
+----==_mimepart_5c7ea5241d2ba_21ad2ac2b1160ec443547
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <p>Bienvenue =C3=A0 toi Asaakira.<br />=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.</p>=0D
+=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5c7ea5241d2ba_21ad2ac2b1160ec443547--
+
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 306ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:34:44 +0100
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:37:43 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (85.9ms)
+Completed 200 OK in 314ms (Views: 291.8ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-05 17:38:20 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZynTauRSMEw1Jys1pO/q6WvSCXmOxlKNT4PruOBWJflc+rBQ30e2dYTu+WY9m+MSYgrDgHrILCW32hBMr624kA==", "user"=>{"email"=>"rachelstarr@yopmail.com", "first_name"=>"Rachel", "last_name"=>"Starr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rachelstarr@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Rachel"], ["last_name", "Starr"], ["email", "rachelstarr@yopmail.com"], ["encrypted_password", "$2a$11$2KItB3vh3MHWALJ3Qif5ruT5/iVfCmflng7ZdeuBj5KqrwhMk.kS."], ["created_at", "2019-03-05 16:38:20.815915"], ["updated_at", "2019-03-05 16:38:20.815915"]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/registration_confirm.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.html.erb within layouts/mailer (0.4ms)
+  Rendering user_mailer/registration_confirm.text.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.text.erb within layouts/mailer (0.2ms)
+UserMailer#registration_confirm: processed outbound mail in 26.1ms
+Sent mail to rachelstarr@yopmail.com (775.8ms)
+Date: Tue, 05 Mar 2019 17:38:20 +0100
+From: noreply@cat-e-store.com
+To: rachelstarr@yopmail.com
+Message-ID: <5c7ea5fcd064c_234e2ae930acd3e090917@stug-SATELLITE-S70-B.mail>
+Subject: Welcome to our community
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c7ea5fccf91c_234e2ae930acd3e0908d9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c7ea5fccf91c_234e2ae930acd3e0908d9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Bienvenue =C3=A0 toi Rachel.=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.=0D
+=0D
+
+----==_mimepart_5c7ea5fccf91c_234e2ae930acd3e0908d9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <p>Bienvenue =C3=A0 toi Rachel.<br />=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.</p>=0D
+=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5c7ea5fccf91c_234e2ae930acd3e0908d9--
+
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 1006ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:38:21 +0100
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:42:24 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 210ms (Views: 190.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:42:28 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 105ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:42:28 +0100
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:42:36 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-05 17:43:15 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q3nJ+uvazdk2BiKKVad0Ew1M2KNZIUo7QXKRlPQBG1quK+JXi/wRV2CWzF2/1LnjzsF9W0JrUHOBSO0/MoG9Iw==", "user"=>{"email"=>"kirablack@yopmail.com", "first_name"=>"kira", "last_name"=>"black", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kirablack@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "kira"], ["last_name", "black"], ["email", "kirablack@yopmail.com"], ["encrypted_password", "$2a$11$buY.cjgKFgLP9tDGvMCSLuOxsJueElPR.mhpw/NWjjJAmIEcBhMLC"], ["created_at", "2019-03-05 16:43:15.681172"], ["updated_at", "2019-03-05 16:43:15.681172"]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+UserMailer#registration_confirm: processed outbound mail in 0.5ms
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 1.2ms)
+
+
+  
+RuntimeError (Invalid delivery method :mailjet):
+  
+app/mailers/user_mailer.rb:6:in `registration_confirm'
+app/models/user.rb:16:in `send_registration_confirm'
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:43:27 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:43:36 +0100
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:43:39 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-05 17:44:22 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"joqGeomxKWhVPkoAJ7rjjj2IDLIL6Ye8g0uLJEIwcHdj2K3X6Zf15gOupNfNyS5+/gWpShCjnfRDcfePhLDWDg==", "user"=>{"email"=>"evieolson@yopmail.com", "first_name"=>"evie", "last_name"=>"olson", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "evieolson@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "evie"], ["last_name", "olson"], ["email", "evieolson@yopmail.com"], ["encrypted_password", "$2a$11$0PjUkzhIqir4Co35XXBawuuon4ZLqxCm3ONs4vRbk2C.ud1nGGxxq"], ["created_at", "2019-03-05 16:44:22.369608"], ["updated_at", "2019-03-05 16:44:22.369608"]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/registration_confirm.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/registration_confirm.text.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.text.erb within layouts/mailer (0.2ms)
+UserMailer#registration_confirm: processed outbound mail in 26.0ms
+Sent mail to evieolson@yopmail.com (700.4ms)
+Date: Tue, 05 Mar 2019 17:44:22 +0100
+From: noreply@cat-e-store.com
+To: evieolson@yopmail.com
+Message-ID: <5c7ea76663479_26482ab513027ae05594e@stug-SATELLITE-S70-B.mail>
+Subject: Welcome to our community
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c7ea7666274e_26482ab513027ae055845";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c7ea7666274e_26482ab513027ae055845
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Bienvenue =C3=A0 toi evie.=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.=0D
+=0D
+
+----==_mimepart_5c7ea7666274e_26482ab513027ae055845
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <p>Bienvenue =C3=A0 toi evie.<br />=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.</p>=0D
+=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5c7ea7666274e_26482ab513027ae055845--
+
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 1045ms (ActiveRecord: 37.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:44:23 +0100
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 196ms (Views: 194.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-05 17:51:09 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (131.2ms)
+Completed 200 OK in 315ms (Views: 280.9ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-05 17:51:35 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O88r8QpJsSmvH0+4wz/BJgPEOZOQxzKNbAxMvdg05ik7/LpS3Odya6E7omjuIxKv+L9KQM5VATnlUkEjfCxaOA==", "user"=>{"email"=>"kalinaryu@yopmail.com", "first_name"=>"kalina", "last_name"=>"ryu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kalinaryu@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "kalina"], ["last_name", "ryu"], ["email", "kalinaryu@yopmail.com"], ["encrypted_password", "$2a$11$IiyeSNO3vA6bA1QymjjIVeyATm.aFFuABAlK0sVwG4xIDaPLZedTC"], ["created_at", "2019-03-05 16:51:35.981500"], ["updated_at", "2019-03-05 16:51:35.981500"]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/registration_confirm.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.html.erb within layouts/mailer (0.4ms)
+  Rendering user_mailer/registration_confirm.text.erb within layouts/mailer
+  Rendered user_mailer/registration_confirm.text.erb within layouts/mailer (0.3ms)
+UserMailer#registration_confirm: processed outbound mail in 25.5ms
+Sent mail to kalinaryu@yopmail.com (2316.0ms)
+Date: Tue, 05 Mar 2019 17:51:36 +0100
+From: noreply@cat-e-store.com
+To: kalinaryu@yopmail.com
+Message-ID: <5c7ea91846a5_297d2ae2f980b96426de@stug-SATELLITE-S70-B.mail>
+Subject: Welcome to our community
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c7ea91837c1_297d2ae2f980b96425d2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c7ea91837c1_297d2ae2f980b96425d2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Bienvenue =C3=A0 toi kalina.=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.=0D
+=0D
+
+----==_mimepart_5c7ea91837c1_297d2ae2f980b96425d2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <p>Bienvenue =C3=A0 toi kalina.<br />=0D
+Ton inscription a bien =C3=A9t=C3=A9 prise en compte.</p>=0D
+=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5c7ea91837c1_297d2ae2f980b96425d2--
+
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 2565ms (ActiveRecord: 36.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-05 17:51:38 +0100
+Processing by CatPicturesController#index as HTML
+  Rendering cat_pictures/index.html.erb within layouts/application
+  Rendered cat_pictures/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
