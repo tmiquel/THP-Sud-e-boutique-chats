@@ -10,6 +10,8 @@ ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
+Faker::UniqueGenerator.clear
+
 models_array = [User, Tag, Cart, Purchase, SingleCartPic, CatPicTag, CatPicture]
 
 10.times do
