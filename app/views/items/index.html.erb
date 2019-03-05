@@ -9,27 +9,28 @@
 
     <%@cat_picture=CatPicture.all.order("title ASC")%>
 
-    <table style="width: 1165px; height: 42px;" border="0">
+    <table style="width: 1165px; height: 29px;" border="0">
       <thead>
         <tr>
-          <td>Nom de la photo</td>
-          <td>Photo</td>
-          <td>Autre</td>
+          <td>nom</td>
+          <td>photo</td>
+          <td>comment</td>
         </tr>
       </thead>
       <tbody>
-        <!-- début boucle -->
         <% @cat_picture.each do |cat| %>
-          <tr>
-            <td style="width: 343px;"><%= cat.title%></td>
-            <td style="width: 372px;">photo1</td>
-            <td style="width: 500px;">autre1</td>
-          </tr>
-        <% end %>
-        <!-- fin de boucle -->
-      </tbody>  
+        <tr>
+          <td style="width: 342.333px;"><a href="/items/<%=cat.id%>      "       ><%= cat.title%></td>
+          <td style="width: 370.333px;">photo1</td>
+          <td style="width: 500.333px;">comment1</td>
+        </tr>
+      </tbody>
+       <% end %>
     </table>
+
+    
     <p><br>
     </p>
   </body>
 </html>
+
