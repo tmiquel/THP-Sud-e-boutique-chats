@@ -1,0 +1,63 @@
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mSingleCartPic Load (0.5ms)[0m  [1m[34mSELECT "single_cart_pics".* FROM "single_cart_pics"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPurchase Create (0.8ms)[0m  [1m[32mINSERT INTO "purchases" ("single_cart_pic_id", "quantities", "purchase_date", "stripe_customer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["single_cart_pic_id", 10], ["quantities", 4], ["purchase_date", "4713-01-01 00:00:00 BC"], ["stripe_customer_id", "okokokookokok"], ["created_at", "2019-03-05 11:07:11.381084"], ["updated_at", "2019-03-05 11:07:11.381084"]]
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering user_mailer/purchase_confirm.html.erb within layouts/mailer
+  Rendered user_mailer/purchase_confirm.html.erb within layouts/mailer (2.0ms)
+  Rendering user_mailer/purchase_confirm.text.erb within layouts/mailer
+  Rendered user_mailer/purchase_confirm.text.erb within layouts/mailer (0.3ms)
+UserMailer#purchase_confirm: processed outbound mail in 892.8ms
+Sent mail to jin@streichshields.com (89.3ms)
+Date: Tue, 05 Mar 2019 12:07:12 +0100
+From: noreply@cat-e-store.com
+To: jin@streichshields.com
+Message-ID: <5c7e586053fb1_4e512affcc7e25c47531e@stug-SATELLITE-S70-B.mail>
+Subject: Confirmation d'achat
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c7e58605238f_4e512affcc7e25c4752c3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c7e58605238f_4e512affcc7e25c4752c3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Bonjour Kurtis Kihn, il semblerait que vous ayez achet=C3=A9 une photo su=
+r notre site.=0D
+=0D
+=0D
+
+----==_mimepart_5c7e58605238f_4e512affcc7e25c4752c3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <h1>Bonjour Kurtis Kihn, il semblerait que vous ayez achet=C3=A9 une =
+photo sur notre site.</h1>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5c7e58605238f_4e512affcc7e25c4752c3--
+
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
