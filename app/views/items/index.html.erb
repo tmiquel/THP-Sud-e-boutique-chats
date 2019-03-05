@@ -1,33 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Items</title>
+  </head>
+  <body>
+    <h1>Items</h1>
 
-<h1>Items</h1>
+    <%@cat_picture=CatPicture.all.order("title ASC")%>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.description %></td>
-        <td><%= item.price %></td>
-        <td><%= item.image_url %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Item', new_item_path %>
+    <table style="width: 1165px; height: 42px;" border="0">
+      <thead>
+        <tr>
+          <td>Nom de la photo</td>
+          <td>Photo</td>
+          <td>Autre</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- début boucle -->
+        <% @cat_picture.each do |cat| %>
+          <tr>
+            <td style="width: 343px;"><%= cat.title%></td>
+            <td style="width: 372px;">photo1</td>
+            <td style="width: 500px;">autre1</td>
+          </tr>
+        <% end %>
+        <!-- fin de boucle -->
+      </tbody>  
+    </table>
+    <p><br>
+    </p>
+  </body>
+</html>
