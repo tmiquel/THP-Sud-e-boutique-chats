@@ -72,4 +72,6 @@ gem 'execjs'
 gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
-gem 'aws-sdk-s3', require: false
+gem 'factory_bot_rails'
+gem 'dotenv-rails'
+gem 'ionicons-rails'
