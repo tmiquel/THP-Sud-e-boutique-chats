@@ -81,3 +81,4 @@ gem "aws-sdk-s3", require: false
 gem 'font-awesome-rails' 
 gem 'linea'
 gem 'simple-line-icons-rails'
+gem 'stripe'
