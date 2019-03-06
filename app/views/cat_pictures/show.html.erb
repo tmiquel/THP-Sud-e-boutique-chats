@@ -1,2 +1,20 @@
-<h1>CatPictures#show</h1>
-<p>Find me in app/views/cat_pictures/show.html.erb</p>
+<% @id=params[:id]%> 
+
+<%@cat_picture=CatPicture.where('id=?',@id).first%>
+
+<!-- 
+à définir quand il y aura un lien entre Tag et CatPicture
+
+
+ <% @tag=Tag.where('id=?',@id).first%>
+-->
+
+
+TITLE
+<%= @cat_picture.title%>  <br>
+
+ID
+<%= @cat_picture.id%>  <br>
+
+
+ <p><a href="/items">liste</a></p>
