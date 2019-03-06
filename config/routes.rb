@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'cat_pictures/index'
   get 'cat_pictures/show'
   devise_for :users
-	resources :users, only: [:show]
+  resources :users, only: [:show] do 
+  resources :avatars, only: [:create]
+  end
 	resources :cat_pictures, only: [:index, :show]
 	resources :carts, only: [:show]
   root to: 'cat_pictures#index'
+  
 end
