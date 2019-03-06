@@ -628,7 +628,7 @@
                                     <div class="block block-image-holder">
                                         <div class="block-image">
                                             <a href="#">
-                                                <img src="../../images/cats/img-<%=cat.id%>.jpeg">
+                                                <%= image_tag ("cats/img-" + cat.id.to_s + ".jpeg") %>
                                             </a>
                                         </div>
                                         <div class="block-info block-info-over block-info-over--style-1 block-info-over--dark-gradient">
