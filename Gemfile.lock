@@ -110,6 +110,7 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
+    ionicons-rails (2.0.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -284,6 +285,7 @@ DEPENDENCIES
   execjs
   factory_bot_rails
   faker
+  ionicons-rails
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
