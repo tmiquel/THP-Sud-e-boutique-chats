@@ -75,3 +75,4 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'factory_bot_rails'
 gem 'dotenv-rails'
 gem 'ionicons-rails'
+gem "aws-sdk-s3", require: false

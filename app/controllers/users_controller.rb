@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
  
   def show
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
   end
 
   def update
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   	  flash[:danger] = "Un message de danger ici"
   	  render :new 
   	end
-  
+  end
   
     def destroy
     end
@@ -26,6 +26,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email)
     end
-
 
 end
