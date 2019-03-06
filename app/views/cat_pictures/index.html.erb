@@ -3,214 +3,33 @@
     <head>
     </head>
     <body>
-        <!-- MAIN WRAPPER -->
-        <div class="body-wrap masonry-container">
-            <div id="st-container" class="st-container">
-                <nav class="st-menu st-effect-1" id="menu-1">
-                    <div class="st-profile">
-                        <div class="st-profile-user-wrapper">
-                            <div class="profile-user-image">
-                                <%= image_tag "prv/people/person-1.jpg", class:"img-circle" %>
+        <section class="slice-sm sct-color-1">
+            <%@cat_picture=CatPicture.all.order("title ASC")%>
+            <div class="container">
+                <div class="row masonry">
+                    <% @cat_picture.each do |cat| %>
+                    <div class="masonry-item col-sm-6 col-md-4 design">
+                        <div class="block block-image-holder">
+                            <div class="block-image">
+                                <a href="/cat_pictures/<%=cat.id%>">
+                                    <%= image_tag ("cats/img-" + cat.id.to_s + ".jpeg") %>
+                                </a>
                             </div>
-                            <div class="profile-user-info">
-                                <span class="profile-user-name">Bertram Ozzie</span>
-                                <span class="profile-user-email">username@example.com</span>
+                            <div class="block-info block-info-over block-info-over--style-1 block-info-over--dark-gradient">
+                                <div class="block-info-inner">
+                                    <div class="text-center">
+                                        <a href="/cat_pictures/<%=cat.id%>" class="heading heading-4 strong-500 mb-0 c-white">
+                                            <span class="clearfix"></span>
+                                            <small class="text-uppercase c-white"> <%=cat.title%> </small>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <% end %>
                     </div>
-                    <div class="st-menu-list mt-2">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-bookmarks-outline"></i> Theme documentation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-cart-outline"></i> Purchase Tribus
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <h3 class="st-menu-title">Account</h3>
-                    <div class="st-menu-list">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-person-outline"></i> User profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-location-outline"></i> My addresses
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-card"></i> My cards
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-unlocked-outline"></i> Password update
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <h3 class="st-menu-title">Support center</h3>
-                    <div class="st-menu-list">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-information-outline"></i> About Tribus
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ion-ios-email-outline"></i> Contact &amp; support
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-camera"></i> Getting started
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="st-pusher">
-                    <div class="st-content">
-                        <div class="st-content-inner">
-                            <!-- Header -->
-                            <div class="header">
-                                <!-- Top Bar -->
-                                <div class="top-navbar">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span class="aux-text d-none d-md-inline-block">
-                                                    <ul class="inline-links inline-links--style-1">
-                                                        <li class="d-none d-lg-inline-block">
-                                                        Cats e-store                 </li>
-                                                        <li>
-                                                            <i class="fa fa-envelope"></i>
-                                                            <a href="#">antoine@voulezvousdiner.com</a>
-                                                        </li>
-                                                    </ul>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <nav class="top-navbar-menu">
-                                                    <ul class="top-menu">
-                                                        <li><a href="/"> Home page</a></li>
-                                                        <li><a href="#">Sign in</a></li>
-                                                        <li><a href="#">Create account</a></li>
-                                                        <li class="dropdown">
-                                                            <a href="#">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Global Search -->
-                                <section id="sctGlobalSearch" class="global-search global-search-overlay">
-                                    <div class="container">
-                                        <div class="global-search-backdrop mask-dark--style-2"></div>
-                                        <!-- Search form -->
-                                        <form class="form-horizontal form-global-search z-depth-2-top" role="form">
-                                            <div class="px-4">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <input type="text" class="search-input" placeholder="Type and hit enter ...">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="close-search" data-toggle="global-search" title="Close search bar"></a>
-                                        </form>
-                                    </div>
-                                </section>
-
-
-                            </div>
-                            <section class="slice-lg pb-4  sct-color-1">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-md-10">
-                                            <h3 class="heading heading-1 strong-600 text-normal">
-                                            Cat pics are
-                                            <span id="type_1" class="type-this c-base-1" data-type-this="Cute., Beautiful., Everything."></span>
-                                            </h3>
-                                            <h3 class="heading heading-4 c-gray-light strong-300 text-normal">
-                                            by Sigmund Freud                                   </h3>
-                                            <p class="lead line-height-1_8 mt-5">
-                                                Time spent with cats is never wasted.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <span class="clearfix"></span>
-                                    <div class="masonry-filter-menu link-menu link-menu--style-1 mt-5">
-                                        <a class="btn-filter strong-600 default" data-filter="*">Show all</a>
-                                        <a class="btn-filter strong-600" data-filter="design">Tag 1</a>
-                                        <a class="btn-filter strong-600" data-filter="branding">Tag 2</a>
-                                        <a class="btn-filter strong-600" data-filter="identity">Tag 3</a>
-                                        <a class="btn-filter strong-600" data-filter="graphics">Tag 4</a>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="slice-sm sct-color-1">
-                                <%@cat_picture=CatPicture.all.order("title ASC")%>
-                                <div class="container">
-                                    <div class="row masonry">
-                                        <% @cat_picture.each do |cat| %>
-                                        <div class="masonry-item col-sm-6 col-md-4 design">
-                                            <div class="block block-image-holder">
-                                                <div class="block-image">
-                                                    <a href="#">
-                                                        <%= image_tag ("cats/img-" + cat.id.to_s + ".jpeg") %>
-                                                    </a>
-                                                </div>
-                                                <div class="block-info block-info-over block-info-over--style-1 block-info-over--dark-gradient">
-                                                    <div class="block-info-inner">
-                                                        <div class="text-center">
-                                                            <a href="/cat_pictures/<%=cat.id%>" class="heading heading-4 strong-500 mb-0 c-white"> 
-                                                            <span class="clearfix"></span>
-                                                            <small class="text-uppercase c-white">Web design</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <% end %>
-                                    </div>
-                                </div>
-                            </section>
-                                                    <!-- FOOTER -->
-                            <footer id="footer" class="footer footer-inverse">
-                                <div class="footer-bottom bg-white border-top">
-                                    <div class="container container-sm">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="copyright text-center">
-                                                    Copyright &copy; 2019                        <a href="https://motherfuckingwebsite.com" target="_blank">
-                                                        <strong>THP Marseille & Nice</strong>
-                                                    </a> -
-                                                    All rights reserved
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </footer>
-                        </div>
-                    </div>
-                    </div><!-- END: st-pusher -->
                 </div>
-                </div><!-- END: body-wrap -->
-                <!-- SCRIPTS -->
-                <a href="#" class="back-to-top btn-back-to-top"></a>
-            </body>
-        </html>
+            </section>
+            <!-- FOOTER -->
+        </body>
+    </html>
