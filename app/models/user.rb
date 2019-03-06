@@ -11,6 +11,7 @@ class User < ApplicationRecord
 	has_many :carts, foreign_key: 'owner_id'
 	has_many :single_cart_pics, through: :carts
 	has_many :purchases, through: :single_cart_pics
+	
 
 private
 	def send_registration_confirm
