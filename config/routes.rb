@@ -2,7 +2,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-
 	resources :users, only: [:show]
 	resources :cat_pictures, only: [:index, :show]
 	resources :carts, only: [:show]
