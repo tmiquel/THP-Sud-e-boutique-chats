@@ -1,3 +1,4 @@
+<!--
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -6,6 +7,11 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :phone %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "phone_number" %> 
   </div>
 
 	<div class="field form-group">
@@ -37,3 +43,98 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+-->
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<section class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(../../assets/images/backgrounds/slider/img-52.jpg); background-position: bottom center;">
+            <div class="container">
+                <div class="row justify-content-center cols-xs-space">
+                    <div class="col-lg-6">
+                        <div class="form-card form-card--style-2 z-depth-2-top">
+                            <div class="form-header text-center">
+                                <div class="form-header-icon">
+                                    <i class="icon ion-log-in"></i>
+                                </div>
+                            </div>
+                            <div class="form-body">
+
+                                <div class="text-center px-2">
+                                    <h4 class="heading heading-4 strong-400 mb-4">Sign in to your account</h4>
+                                </div>
+
+                                <form class="form-default mt-4" data-toggle="validator" role="form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <%= f.label :first_name %><br />
+                                                <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <%= f.label :last_name %><br />
+                                                <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                 <%= f.label :email %><br />
+                                                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                 <%= f.label :phone %><br />
+                                                <%= f.text_field :first_name, autofocus: true, autocomplete: "phone_number" %> <!--le first_name de text_fiels a voir-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                 <%= f.label :password %>
+                                                <% if @minimum_password_length %>
+                                                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                                <% end %><br />
+                                                <%= f.password_field :password, autocomplete: "new-password" %>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group has-feedback">
+                                                <%= f.label :password_confirmation %><br />
+                                                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-1 ">
+                                        <small class="">By clicking "Sign up" you agree to our terms and conditions</small>
+                                    </div>
+
+                                    <div class="btn btn-styled  btn-base-1 mt-4">
+                                        
+                                            <%= f.submit "Sign up" %>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <% end %>
+
+<%= render "devise/shared/links" %>
+
+
