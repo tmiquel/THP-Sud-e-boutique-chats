@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 	resources :users, only: [:show]
 	resources :cat_pictures, only: [:index, :show]
 	resources :carts, only: [:show]
+	
+
   root to: 'cat_pictures#index'
 end

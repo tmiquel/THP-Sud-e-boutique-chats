@@ -147,8 +147,8 @@
                                                     <nav class="top-navbar-menu">
                                                         <ul class="top-menu">
                                                             <li><a href="/"> Home page</a></li>
-                                                            <li><a href="#">Sign in</a></li>
-                                                            <li><a href="#">Create account</a></li>
+                                                            <li><%= link_to new_user_session_path do %>Sign In<% end %></li>
+                                                            <li><%= link_to new_user_registration_path do %>Create account<% end %></li>
                                                             <li class="dropdown">
                                                                 <a href="#">
                                                                     <i class="fa fa-shopping-cart"></i>
