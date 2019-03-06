@@ -1,58 +1,9 @@
 <!DOCTYPE html>
+<% @id=params[:id]%> 
+
+<%@cat_picture=CatPicture.where('id=?',@id).first%>
 <html>
-<head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="robots" content="index, follow">
-<meta name="description" content="Boomerang is a responsive website template based on the well known Bootstrap framework. It's very well structured with lots of features and demos ready to be used.">
-<meta name="keywords" content="bootstrap, responsive, template, website, html, theme, ux, ui, web, design, developer, support, business, corporate, real estate, education, medical, school, education, demo, css, framework">
-<meta name="author" content="Webpixels">
-
-<title>Boomerang - Multipurpose Bootstrap Theme</title>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
-
-<!-- Plugins -->
-<link rel="stylesheet" href="../../assets/vendor/swiper/css/swiper.min.css">
-<link rel="stylesheet" href="../../assets/vendor/hamburgers/hamburgers.min.css" type="text/css">
-<link rel="stylesheet" href="../../assets/vendor/animate/animate.min.css" type="text/css">
-<link rel="stylesheet" href="../../assets/vendor/fancybox/css/jquery.fancybox.min.css">
-
-<!-- Icons -->
-<link rel="stylesheet" href="../../assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="../../assets/fonts/ionicons/css/ionicons.min.css" type="text/css">
-<link rel="stylesheet" href="../../assets/fonts/line-icons/line-icons.css" type="text/css">
-<link rel="stylesheet" href="../../assets/fonts/line-icons-pro/line-icons-pro.css" type="text/css">
-
-<!-- Linea Icons -->
-<link rel="stylesheet" href="../../assets/fonts/linea/arrows/linea-icons.css" type="text/css">
-<link rel="stylesheet" href="../../assets/fonts/linea/basic/linea-icons.css" type="text/css">
-<link rel="stylesheet" href="../../assets/fonts/linea/ecommerce/linea-icons.css" type="text/css">
-<link rel="stylesheet" href="../../assets/fonts/linea/software/linea-icons.css" type="text/css">
-
-<!-- Global style (main) -->
-<link id="stylesheet" type="text/css" href="../../assets/css/boomerang.min.css" rel="stylesheet" media="screen">
-
-<!-- Custom style - Remove if not necessary -->
-<link type="text/css" href="../../assets/css/custom-style.css" rel="stylesheet">
-
-<!-- Favicon -->
-<link href="../../assets/images/favicon.png" rel="icon" type="image/png">
-
-
-<!-- Deso Slide -->
-<link href="../../assets/vendor/deso-slide/css/jquery.desoslide.min.css" rel="stylesheet">
-
-</head>
 <body>
-
-
 <!-- MAIN WRAPPER -->
 <div class="body-wrap shop-default shop-sportswear">
     <div id="st-container" class="st-container">
@@ -679,24 +630,11 @@
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide">
                                                         <a href="../../assets/images/prv/shop/sportswear/img-product-lg-1.jpg" data-desoslide-index="0">
-                                                            <img src="../../assets/images/prv/shop/sportswear/img-product-lg-1.jpg" alt="Bird">
+
+                                                            <%= image_tag ("cats/img-" + @cat_picture.id.to_s + ".jpeg") %>
                                                         </a>
                                                     </div>
-                                                    <div class="swiper-slide">
-                                                        <a href="../../assets/images/prv/shop/sportswear/img-product-lg-2.jpg" data-desoslide-index="1">
-                                                            <img src="../../assets/images/prv/shop/sportswear/img-product-lg-2.jpg" alt="Bird">
-                                                        </a>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <a href="../../assets/images/prv/shop/sportswear/img-product-lg-3.jpg" data-desoslide-index="2">
-                                                            <img src="../../assets/images/prv/shop/sportswear/img-product-lg-3.jpg" alt="Bird">
-                                                        </a>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <a href="../../assets/images/prv/shop/sportswear/img-product-lg-4.jpg" data-desoslide-index="3">
-                                                            <img src="../../assets/images/prv/shop/sportswear/img-product-lg-4.jpg" alt="Bird">
-                                                        </a>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -709,7 +647,7 @@
                                         <div class="product-description-wrapper">
                                             <!-- Product title -->
                                             <h2 class="product-title heading heading-3 strong-400 text-capitalize">
-                                                Women's running shoes
+                                                <%= @cat_picture.title%>
                                             </h2>
 
                                             <hr>
@@ -739,69 +677,7 @@
                                             <div class="product-price py-3">$<strong>160</strong><small>.00</small></div>
 
                                             <form class="form-horizontal">
-                                                <!-- Choose size -->
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label class="text-uppercase strong-600">Size</label>
 
-                                                        <ul class="list-inline checkbox-alphanumeric checkbox-alphanumeric--style-1">
-                                                            <li>
-                                                                <input type="radio" id="size-1" name="size">
-                                                                <label for="size-1">37</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="size-2" name="size">
-                                                                <label for="size-2">38</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="size-3" name="size">
-                                                                <label for="size-3">39</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="size-4" name="size">
-                                                                <label for="size-4">40</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="size-5" name="size">
-                                                                <label for="size-5">41</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="size-6" name="size">
-                                                                <label for="size-6">42</label>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Choose color -->
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label class="text-uppercase strong-600">Color</label>
-
-                                                        <ul class="list-inline checkbox-color">
-                                                            <li>
-                                                                <input type="radio" id="color-1" name="color" checked="">
-                                                                <label style="background: #38393d;" for="color-1" data-toggle="tooltip" data-original-title="Black"></label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="color-2" name="color">
-                                                                <label style="background: #bfc0c2;" for="color-2" data-toggle="tooltip" data-original-title="Gray"></label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="color-3" name="color">
-                                                                <label style="background: #eabfb9;" for="color-3" data-toggle="tooltip" data-original-title="Rose"></label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="color-4" name="color">
-                                                                <label style="background: #000000;" for="color-4" data-toggle="tooltip" data-original-title="Black"></label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="color-5" name="color">
-                                                                <label style="background: #dcc4ac;" for="color-5" data-toggle="tooltip" data-original-title="Gold"></label>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
 
                                                 <!-- Quantity + Add to cart -->
                                                 <label class="text-uppercase strong-600">Quantity</label>
@@ -851,11 +727,6 @@
                                                     <p class="mt-1 mb-4">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.
                                                     </p>
-
-                                                    <!-- 16:9 aspect ratio -->
-                                                    <div class="embed-responsive embed-responsive-16by9">
-                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4nMz2mDBd-0?rel=0&amp;controls=0&amp;showinfo=0"></iframe>
-                                                    </div>
                                                 </div>
 
                                                 <span class="space-md-md"></span>
