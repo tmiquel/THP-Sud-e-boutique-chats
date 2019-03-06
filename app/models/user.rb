@@ -1,8 +1,9 @@
 class User < ApplicationRecord
 	after_create :send_registration_confirm
-
+	has_one_attached :avatar
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+	
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 	validates :first_name, presence: true
