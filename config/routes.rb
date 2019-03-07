@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
 	end
 	
-	end
+
 	resources :single_cart_pics, only: [:update, :destroy]
 	resources :cat_pictures, only: [:index, :show]
-  root to: 'cat_pictures#index'
+	root to: 'cat_pictures#index'
 end
