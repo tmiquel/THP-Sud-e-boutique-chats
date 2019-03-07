@@ -4,6 +4,8 @@ class CatPicture < ApplicationRecord
 	validate :valid_price
 	has_many :cat_pic_tags
 	has_many :single_cart_pics
+	has_one_attached :picture_file
+	
 
 private
 	def valid_price
