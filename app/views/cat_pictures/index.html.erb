@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <section class="slice-sm sct-color-1">
+            <div class="container">
+                <div class="row masonry">
+                    <% @cat_pictures.each do |cat| %>
+                    <div class="masonry-item col-sm-6 col-md-4 design">
+                        <div class="block block-image-holder">
+                            <div class="block-image">
+                                <a href="/cat_pictures/<%=cat.id%>">
+                                    <%= image_tag (cat.picture_file) %>
+                                </a>
+                            </div>
+                            <div class="block-info block-info-over block-info-over--style-1 block-info-over--dark-gradient">
+                                <div class="block-info-inner">
+                                    <div class="text-center">
+                                        <a href="/cat_pictures/<%=cat.id%>" class="heading heading-4 strong-500 mb-0 c-white">
+                                            <span class="clearfix"></span>
+                                            <small class="text-uppercase c-white"> <%=cat.title%> </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+            </section>
+            <!-- FOOTER -->
+        </body>
+    </html>

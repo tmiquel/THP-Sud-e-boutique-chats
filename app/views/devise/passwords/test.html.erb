@@ -1,0 +1,48 @@
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="body-wrap">
+    <section class="slice sct-color-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card form-card form-card--style-2">
+                        <div class="form-header text-center">
+                            <div class="form-header-icon">
+                                <i class="icon ion-log-in"></i>
+                            </div>
+                        </div>
+                        <div class="form-body">
+                            <div class="text-center px-2">
+                                <h4 class="heading heading-4 strong-400 mb-4">Forgot your password?</h4>
+                            </div>
+
+                            <form class="form-default" role="form">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <%= f.label :email %><br />
+                                            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div  class="btn btn-styled btn-lg btn-block btn-base-1 mt-4">
+                                    <%= f.submit "Send me reset password instructions" %>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+
