@@ -147,12 +147,22 @@
                                                     <nav class="top-navbar-menu">
                                                         <ul class="top-menu">
                                                             <li><a href="/"> Home page</a></li>
+                                                            <% unless user_signed_in? %>
                                                             <li><%= link_to new_user_session_path do %>Sign In<% end %></li>
                                                             <li><%= link_to new_user_registration_path do %>Create account<% end %></li>
+                                                            <% else %>
+                                                           <li><%= link_to user_path(current_user) do  %>Mon profile<%end%></li>
+                                                            <li><%= link_to destroy_user_session_path, method: :delete do %>Log Out<%end%></li>
+                                                           <%end%>
+
+                                                            
+                                                             
                                                             <li class="dropdown">
-                                                                <a href="#">
+                                                            <% if current_user %>
+                                                                <%= link_to user_cart_path(user_id: current_user.id, id: 125) do%>
                                                                     <i class="fa fa-shopping-cart"></i>
-                                                                </a>
+                                                                <% end %>
+                                                            <%end%>
                                                             </li>
                                                         </ul>
                                                     </nav>
