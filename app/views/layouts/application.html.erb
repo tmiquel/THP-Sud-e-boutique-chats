@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
         <!-- <link rel="stylesheet" href="assets/fonts/line-icons-pro/line-icons-pro.css" type="text/css"> -->
-        <%= stylesheet_link_tag  "line-icons-pro" %>
+        
         <!-- Linea Icons -->
         <!--     <link rel="stylesheet" href="assets/fonts/linea/arrows/linea-icons.css" type="text/css">
         <link rel="stylesheet" href="assets/fonts/linea/basic/linea-icons.css" type="text/css">
@@ -39,7 +39,7 @@
         <!-- Global style (main) --><!--
         <link id="stylesheet" type="text/css" href="assets/css/boomerang.min.css" rel="stylesheet" media="screen"> -->
         <!-- Custom style - Remove if not necessary -->
-        <link type="text/css" href="assets/css/custom-style.css" rel="stylesheet">
+        <!-- <link type="text/css" href="assets/css/custom-style.css" rel="stylesheet"> -->
         <!-- Favicon -->
         <!--     <link href="assets/images/favicon.png" rel="icon" type="image/png"> -->
         <%= favicon_link_tag 'favicon.png' %>
@@ -147,12 +147,20 @@
                                                     <nav class="top-navbar-menu">
                                                         <ul class="top-menu">
                                                             <li><a href="/"> Home page</a></li>
+                                                            <% unless user_signed_in? %>
                                                             <li><%= link_to new_user_session_path do %>Sign In<% end %></li>
+                                                            <% else %>
+                                                            <%= link_to user_path(current_user) do  %>Mon profile<%end%>
+                                                           <%end%>
+
                                                             <li><%= link_to new_user_registration_path do %>Create account<% end %></li>
+                                                             
                                                             <li class="dropdown">
-                                                                <a href="#">
+                                                            <% if current_user %>
+                                                                <%= link_to user_cart_path(user_id: current_user.id, id: 125) do%>
                                                                     <i class="fa fa-shopping-cart"></i>
-                                                                </a>
+                                                                <% end %>
+                                                            <%end%>
                                                             </li>
                                                         </ul>
                                                     </nav>
@@ -218,8 +226,6 @@
                     </div><!-- END: body-wrap -->
                     <!-- SCRIPTS -->
                     <a href="#" class="back-to-top btn-back-to-top"></a>
-                </body>
-            </html>
         </div>
     </body>
 </html>

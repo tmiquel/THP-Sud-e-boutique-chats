@@ -1,0 +1,2 @@
+module SingleCartPicsHelper
+end
