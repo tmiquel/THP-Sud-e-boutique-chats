@@ -1,4 +1,3 @@
-<body>
 
  <!-- Navbar -->
 
@@ -649,13 +648,13 @@
                                 <div class="col-md-6">
                                     <div class="">
                                         <h3 class="heading heading-1 strong-600 text-capitalize mb-1">
-                                            <span>Cart</span>
+                                            <span>Order your pussy cart <strong>now</strong></span>
                                         </h3>
 
                                         <ol class="breadcrumb breadcrumb--style-2">
-                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                            <li class="breadcrumb-item"<a href="#">Shop</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Checkout</a></li>
+                                            <li class="breadcrumb-item"><%= link_to "Choisissez  >>", root_path %></li>
+                                            <li class="breadcrumb-item"><%= link_to "Commandez  >>", user_cart_path %></li>
+                                            <li class="breadcrumb-item"><%= link_to "Achetez", user_cart_path(anchor: "checkout") %></li>
                                         </ol>
                                     </div>
 
@@ -715,13 +714,13 @@
                                                             <td class="product-quantity d-none d-md-table-cell">
                                                                 <div class="input-group input-group--style-2 pr-4" style="width: 130px;">
                                                                     <span class="input-group-btn">
-																<%= link_to "/single_cart_pics#increase" :scp_id => single_cart_pic.id, method: :put, class: "btn btn-number", type: "button", data: {type: "minus", field: "quantity[#{index +1 }]"} do %>
+																<%= link_to single_cart_pic_path(single_cart_pic, :ope => "-"), method: :patch, class: "btn btn-number", type: "button", data: {type: "minus", field: "quantity[#{index +1 }]"} do %>
                                                                             <i class="ion-minus"></i>
                                                                         <% end %>
                                                                     </span>
                                	<input type="text" name=<%= "quantity[#{index +1 }]" %> class="form-control input-number" placeholder="3" value="<%= single_cart_pic.amount %>" min="1" max="10" >
                                                                     <span class="input-group-btn">
-																<%= link_to "/single_cart_pics#increase" :scp_id => single_cart_pic.id, method: :put, class: "btn btn-number", type: "button", data: {type: "plus", field: "quantity[#{index +1 }]"} do %>
+																<%= link_to single_cart_pic_path(single_cart_pic, :ope => "+"), method: :patch, class: "btn btn-number", type: "button", data: {type: "plus", field: "quantity[#{index +1 }]"} do %>
                                                                              <i class="ion-plus"></i>
                                                                         <% end %>
                                                                     </span>
@@ -753,7 +752,7 @@
 <% end %>
                                             </div>
                                             <div class="col-6 text-right">
-                                                <button type="submit" class="btn btn-styled btn-base-1">Proceed to checkout</button>
+                                                <button type="submit" class="btn btn-styled btn-base-1" id="checkout">Proceed to checkout</button>
                                             </div>
                                         </div>
                                     </form>
@@ -934,36 +933,17 @@
 
 
 
-                        <ul class="social-media social-media--style-1-v4">
-
+                        <ul class="social-media social-media--style-1-v4 d-flex flex-column align-items-start">
                             <li>
-
-                                <a href="#" class="facebook" target="_blank" data-toggle="tooltip" data-original-title="Facebook">
-
-                                    <i class="fa fa-facebook"></i>
-
-                                </a>
-
+                                <%= link_to image_tag('socials/twitter.png'), "http://www.twitter.com/", target: "blank", class: "mt-2" %>
                             </li>
 
                             <li>
-
-                                <a href="#" class="instagram" target="_blank" data-toggle="tooltip" data-original-title="Instagram">
-
-                                    <i class="fa fa-instagram"></i>
-
-                                </a>
-
+																<%= link_to image_tag('socials/facebook.png'), "http://www.facebook.com/", target: "blank", class: "my-3" %>
                             </li>
 
                             <li>
-
-                                <a href="#" class="dribbble" target="_blank" data-toggle="tooltip" data-original-title="Dribbble">
-
-                                    <i class="fa fa-dribbble"></i>
-
-                                </a>
-
+																<%= link_to image_tag('socials/rss.png'), "#", target: "blank" %>
                             </li>
 
                             <li>
@@ -973,19 +953,15 @@
                                     <i class="fa fa-github"></i>
 
                                 </a>
-
                             </li>
-
                         </ul>
-
                     </div>
-
                 </div>
 
+
+
             </div>
-
         </div>
-
     </div>
 
 </footer>
@@ -996,4 +972,3 @@
 <a href="#" class="back-to-top btn-back-to-top"></a>
 
 
-</body>

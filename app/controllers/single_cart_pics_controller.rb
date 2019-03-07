@@ -1,20 +1,21 @@
 class SingleCartPicsController < ApplicationController
-  def increase_amount
-		@single_cart_pic = SingleCartPic.find(params[:scp_id])
-		@single_cart_pic.amount += 1
-		redirect_to "single_cart_pics#show"
-  end
-	
-	def decrease_amount
-		@single_cart_pic = SingleCartPic.find(params[:scp_id])
-		if @single_cart_pic.amount > 1
-    	@single_cart_pic.amount -= 1 
+  def update
+		@single_cart_pic = SingleCartPic.find(params[:id])
+		if (params[:ope] == "+")
+			@single_cart_pic.increment!(:amount)
+		elsif (params[:ope] == "-")
+			if (@single_cart_pic.amount > 1)
+    		@single_cart_pic.decrement!(:amount)
+			end
 		end
-    redirect_to "single_cart_pics#show"
+		puts @single_cart_pic.errors.messages
+		tp @single_cart_pic
+    redirect_to user_cart_path(@single_cart_pic.cart)
 	end
 
   def destroy
 		@single_cart_pic = SingleCartPic.find(params[:id])
 		@single_cart_pic.delete
   end
+
 end
