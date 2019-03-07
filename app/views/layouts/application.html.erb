@@ -46,6 +46,10 @@
     </head>
     <body>
         <!-- emplacement éléments bootstrap, ex : navbar-->
+
+        <%= render partial: "layouts/flash" %>
+
+
         <div class="container">
             <!-- MAIN WRAPPER -->
             <div class="body-wrap masonry-container">
@@ -149,11 +153,13 @@
                                                             <li><a href="/"> Home page</a></li>
                                                             <% unless user_signed_in? %>
                                                             <li><%= link_to new_user_session_path do %>Sign In<% end %></li>
+                                                            <li><%= link_to new_user_registration_path do %>Create account<% end %></li>
                                                             <% else %>
-                                                            <%= link_to user_path(current_user) do  %>Mon profile<%end%>
+                                                           <li><%= link_to user_path(current_user) do  %>Mon profile<%end%></li>
+                                                            <li><%= link_to destroy_user_session_path, method: :delete do %>Log Out<%end%></li>
                                                            <%end%>
 
-                                                            <li><%= link_to new_user_registration_path do %>Create account<% end %></li>
+                                                            
                                                              
                                                             <li class="dropdown">
                                                             <% if current_user %>
