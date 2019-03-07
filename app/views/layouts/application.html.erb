@@ -152,6 +152,7 @@
                                                             <li><%= link_to new_user_registration_path do %>Create account<% end %></li>
                                                             <% else %>
                                                            <li><%= link_to user_path(current_user) do  %>Mon profile<%end%></li>
+                                                            <li><%= link_to destroy_user_session_path, method: :delete do %>Log Out<%end%></li>
                                                            <%end%>
 
                                                             
