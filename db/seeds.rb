@@ -32,6 +32,10 @@ if Rails.env.production?
   end
 else
   Dir.glob(Rails.root.join("app", "assets", "images", "cats", "*.jpeg")) do |pic_path|
+    puts "pic_path"
+    puts pic_path
+    puts
+
   	cat_picture = CatPicture.new(title: Faker::Creature::Cat.breed,
   		price: rand(2..27))
   	cat_picture.picture_file.attach(io: File.open(pic_path), filename: ('img.jpeg'))
@@ -44,20 +48,16 @@ end
 end
 
 10.times do
-	k=0
-	unless (k=="success")
-		k=0
+	while true
   	single_cart_pic = FactoryBot.build(:single_cart_pic)
-		(single_cart_pic.save ? k="success" : nil )
+		break if single_cart_pic.save 
 	end
 end
 
 10.times do
-	k=0
-  unless (k=="success")
-		k=0
+  while true
   	cat_pic_tag = FactoryBot.build(:cat_pic_tag)
-		(cat_pic_tag.save ? k="success" : nil )
+		break if cat_pic_tag.save
 	end
 end
 
