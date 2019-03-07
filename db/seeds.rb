@@ -22,8 +22,21 @@ end
 	tag = FactoryBot.create(:tag)
 end
 
-10.times do
-	cat_picture = FactoryBot.create(:cat_picture)
+if Rails.env.production?
+  Dir.glob(Rails.root.join("public", "assets", "cats", "*.jpg")) do |pic_path|
+
+  	cat_picture = CatPicture.new(title: Faker::Creature::Cat.breed,
+  		price: rand(2..27))
+  	cat_picture.picture_file.attach(io: File.open(pic_path), filename: ('img.jpeg'))
+  	cat_picture.save
+  end
+else
+  Dir.glob(Rails.root.join("app", "assets", "images", "cats", "*.jpeg")) do |pic_path|
+  	cat_picture = CatPicture.new(title: Faker::Creature::Cat.breed,
+  		price: rand(2..27))
+  	cat_picture.picture_file.attach(io: File.open(pic_path), filename: ('img.jpeg'))
+  	cat_picture.save
+  end
 end
 
 10.times do
@@ -61,3 +74,4 @@ models_array.each do |model|
   tp model.last(3)
   puts
 end
+
