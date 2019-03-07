@@ -77,7 +77,8 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'factory_bot_rails'
 gem 'ionicons-rails'
 gem "aws-sdk-s3", require: false
-gem 'font-awesome-rails'
+gem 'font-awesome-rails' 
 gem 'linea'
 gem 'simple-line-icons-rails'
 gem 'stripe'
+
