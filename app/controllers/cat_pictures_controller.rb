@@ -5,6 +5,6 @@ class CatPicturesController < ApplicationController
 
   def show
   	@id=params[:id]
-  	@cat_picture=CatPicture.where('id=?',@id).first
+  	@cat_picture=CatPicture.friendly.find(params[:id])
   end
 end
