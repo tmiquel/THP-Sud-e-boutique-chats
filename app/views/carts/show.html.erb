@@ -107,7 +107,7 @@
 <% end %>
                                             </div>
                                             <div class="col-6 text-right">
-                                                <button type="submit" class="btn btn-styled btn-base-1" id="checkout">Proceed to checkout</button>
+                            <%= link_to "Order now", purchases_path(:user_id => current_user.id, :amount => @total_amount), method: :post, class: "btn btn-styled btn-base-1" %>
                                             </div>
                                         </div>
                                     </form>
