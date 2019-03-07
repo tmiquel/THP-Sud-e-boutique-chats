@@ -37,7 +37,7 @@ A Ruby-on-Rails website project ! The goal : selling (cute) cat pictures.
 If you want to make this project work locally
 
 - **download this repo**, either from a .zip file or by cloning it
-- **go to the root of the new folder with your favorite terminal*
+- **go to the root of the new folder with your favorite terminal**
 - $ bundle install
 - $ rails db:create
 - $ rails db:migrate
