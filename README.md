@@ -11,7 +11,7 @@ ______               ____  ___
 
 ======
 
-![https://i.imgur.com/7JOYSGS.jpg](https://i.imgur.com/pTPu7sg.png)
+![https://i.imgur.com/pTPu7sg.png](https://i.imgur.com/7JOYSGS.jpg)
 
 ======
 
