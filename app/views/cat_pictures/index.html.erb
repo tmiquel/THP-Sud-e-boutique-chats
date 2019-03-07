@@ -4,10 +4,9 @@
     </head>
     <body>
         <section class="slice-sm sct-color-1">
-            <%@cat_picture=CatPicture.all.order("title ASC")%>
             <div class="container">
                 <div class="row masonry">
-                    <% @cat_picture.each do |cat| %>
+                    <% @cat_pictures.each do |cat| %>
                     <div class="masonry-item col-sm-6 col-md-4 design">
                         <div class="block block-image-holder">
                             <div class="block-image">
