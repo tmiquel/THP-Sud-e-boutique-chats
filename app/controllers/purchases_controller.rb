@@ -16,7 +16,7 @@ end
       customer: customer.id,
       amount: @amount*100,
       description: 'Rails Stripe customer',
-      currency: 'usd',
+      currency: 'eur',
     })
     	if customer&&charge
     		purchase = Purchase.create(cart: @cart, purchase_date: Time.now.to_date, stripe_customer_id: charge.customer)
@@ -35,4 +35,3 @@ end
   	end
 
 end
-
