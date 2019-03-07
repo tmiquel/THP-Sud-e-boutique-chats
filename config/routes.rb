@@ -13,4 +13,3 @@ Rails.application.routes.draw do
 	resources :purchases, only: [:create]
   root to: 'cat_pictures#index'
 end
-
