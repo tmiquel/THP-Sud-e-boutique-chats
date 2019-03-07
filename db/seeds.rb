@@ -44,10 +44,6 @@ else
 end
 
 10.times do
-  cart = FactoryBot.create(:cart)
-end
-
-10.times do
 	while true
   	single_cart_pic = FactoryBot.build(:single_cart_pic)
 		break if single_cart_pic.save 
