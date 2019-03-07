@@ -50,7 +50,9 @@ node_modules/
 # Ignore precompiled javascript packs
 /public/packs
 /public/packs-test
-/public/assets
+
+# cf https://devcenter.heroku.com/articles/rails-asset-pipeline
+# /public/assets
 
 # Ignore yarn files
 /yarn-error.log
