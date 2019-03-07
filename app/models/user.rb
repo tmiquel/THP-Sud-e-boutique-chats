@@ -14,6 +14,11 @@ class User < ApplicationRecord
 	has_many :single_cart_pics, through: :carts
 	has_many :purchases, through: :single_cart_pics
 	
+	
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 
 private
 	def send_registration_confirm
