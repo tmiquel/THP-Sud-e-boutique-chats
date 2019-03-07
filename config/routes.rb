@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     	resources :avatars, only: [:create]
 
 	end
+
 	resources :purchases
 
 	resources :single_cart_pics, only: [:update, :destroy]
