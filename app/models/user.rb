@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :full_name, use: :slugged
 	after_create :send_registration_confirm
 	has_one_attached :avatar
   # Include default devise modules. Others available are:
@@ -13,6 +15,9 @@ class User < ApplicationRecord
 	has_many :single_cart_pics, through: :carts
 	has_many :purchases, through: :single_cart_pics
 	
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
 private
 	def send_registration_confirm
