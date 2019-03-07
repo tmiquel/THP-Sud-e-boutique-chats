@@ -92,9 +92,10 @@
           <div class="profile-picture profile-picture--style-2">
               <%= image_tag "prv/people/person-1.jpg", class:"img-circle" %>
               <div class= "container">
+              <div class="link-menu link-menu--style-3 py-4 border-bottom centered text-center">
                   <%= form_tag user_avatars_path(@user), multipart: true do %>
-                    <%= file_field_tag :avatar  %>
-                    <%= submit_tag "update" %>
+                    <%= file_field_tag :avatar  %> 
+                   <%= link_to  do %> <%= submit_tag "update" %> <% end %>
                   <% end %>
               </div>
             </div>
@@ -108,8 +109,7 @@
           </div>
           <div class= "container">
             <div class="link-menu link-menu--style-3 py-4 border-bottom centered text-center">
-                <a href="../../pages/profile/account-settings.html" class="active">Settings</a>
-                <a href="../../pages/profile/account-orders.html">Orders</a>
+                <%= link_to "Settings", edit_user_registration_path %>
             </div>
           </div>
           
@@ -133,7 +133,6 @@
                               <th>Order</th>
                               <th>Date</th>
                               <th>Amount</th>
-                              <th>Tracking</th>
                               <th>Status</th>
                           </tr>
                       </thead>
@@ -149,12 +148,9 @@
                               <td>
                                   <a href="#">WPX-1500</a>
                               </td>
-                              <td>06/08/2018</td>
+                              <td> 06/08/2018</td>
                               <td>
                                   25.00 EUR
-                              </td>
-                              <td>
-                                  <a href="#">10005-x</a>
                               </td>
                               <td>
                                   <span class="badge badge--2 mr-4">
@@ -177,9 +173,6 @@
                                   60.20 EUR
                               </td>
                               <td>
-                                  <a href="#">10014-x</a>
-                              </td>
-                              <td>
                                   <span class="badge badge--2 mr-4">
                                       <i class="bg-green"></i> paid
                                   </span>
@@ -198,9 +191,6 @@
                               <td>15/10/2018</td>
                               <td>
                                   99.00 EUR
-                              </td>
-                              <td>
-                                  <a href="#">10525-x</a>
                               </td>
                               <td>
                                   <span class="badge badge--2 mr-4">
@@ -223,9 +213,6 @@
                                   35.00 EUR
                               </td>
                               <td>
-                                  <a href="#">10728-x</a>
-                              </td>
-                              <td>
                                   <span class="badge badge--2 mr-4">
                                       <i class="bg-blue"></i> shipped
                                   </span>
@@ -244,9 +231,6 @@
                               <td>25/11/2018</td>
                               <td>
                                   17.50 EUR
-                              </td>
-                              <td>
-                                  <a href="#">11500-x</a>
                               </td>
                               <td>
                                   <span class="badge badge--2 mr-4">
@@ -269,9 +253,6 @@
                                   25.00 EUR
                               </td>
                               <td>
-                                  <a href="#">10005-x</a>
-                              </td>
-                              <td>
                                   <span class="badge badge--2 mr-4">
                                       <i class="bg-green"></i> paid
                                   </span>
@@ -290,9 +271,6 @@
                               <td>10/10/2018</td>
                               <td>
                                   60.20 EUR
-                              </td>
-                              <td>
-                                  <a href="#">10014-x</a>
                               </td>
                               <td>
                                   <span class="badge badge--2 mr-4">
@@ -315,9 +293,6 @@
                                   99.00 EUR
                               </td>
                               <td>
-                                  <a href="#">10525-x</a>
-                              </td>
-                              <td>
                                   <span class="badge badge--2 mr-4">
                                       <i class="bg-red"></i> canceled
                                   </span>
@@ -338,9 +313,6 @@
                                   35.00 EUR
                               </td>
                               <td>
-                                  <a href="#">10728-x</a>
-                              </td>
-                              <td>
                                   <span class="badge badge--2 mr-4">
                                       <i class="bg-blue"></i> shipped
                                   </span>
@@ -359,9 +331,6 @@
                               <td>25/11/2018</td>
                               <td>
                                   17.50 EUR
-                              </td>
-                              <td>
-                                  <a href="#">11500-x</a>
                               </td>
                               <td>
                                   <span class="badge badge--2 mr-4">
