@@ -1,9 +1,9 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   devise_for :users
-	resources :users, only: [:show] do
+	resources :users do
 		resources :carts, only: [:show]
-    resources :avatars, only: [:create]
+    	resources :avatars, only: [:create]
 
 	end
 	resources :purchases
