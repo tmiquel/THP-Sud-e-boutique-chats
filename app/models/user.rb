@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+	after_create -> { create_user_cart(self) }
+	
   extend FriendlyId
   friendly_id :full_name, use: :slugged
 	after_create :send_registration_confirm
@@ -15,6 +18,11 @@ class User < ApplicationRecord
 	has_many :single_cart_pics, through: :carts
 	has_many :purchases, through: :single_cart_pics
 	
+	
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 
 private
 	def send_registration_confirm
@@ -24,5 +32,4 @@ private
 	def create_user_cart(user)
 		Cart.create(owner: user)
 	end
-
 end
