@@ -1,2 +1,81 @@
-<h1>CatPictures#show</h1>
-<p>Find me in app/views/cat_pictures/show.html.erb</p>
+<!DOCTYPE html>
+<% @id=params[:id]%>
+<%@cat_picture=CatPicture.where('id=?',@id).first%>
+<html>
+    <body>
+                            <!-- SHOP GRID WRAPPER -->
+                            <section class="slice sct-color-2">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <!-- Product gallery -->
+                                            <div class="gallery-container">
+                                                <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
+                                                <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide">
+                                                            <%= image_tag ("cats/img-" + @cat_picture.id.to_s + ".jpeg") %>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="px-4">
+                                                <!-- Product description -->
+                                                <div class="product-description-wrapper">
+                                                    <!-- Product title -->
+                                                    <h2 class="product-title heading heading-3 strong-400 text-capitalize">
+                                                    <%= @cat_picture.title%>
+                                                    </h2>
+                                                    <hr>
+                                                    <!-- Product description -->
+                                                    <div class="product-short-text mt-4">
+                                                        <h3 class="heading heading-xs strong-500 text-uppercase">
+                                                        Description:
+                                                        </h3>
+                                                        <p>
+                                                            Photo de chat n°<%= @cat_picture.id%>. Pellentesque habitant morbi tristique senectus et netus malesuada fames turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor.
+                                                        </p>
+                                                    </div>
+                                                    <!-- Price tag -->
+                                                    <div class="product-price py-3">$<strong>160</strong><small>.00</small></div>
+                                                    <form class="form-horizontal">
+                                                        <!-- Quantity + Add to cart -->
+                                                        <label class="text-uppercase strong-600">Quantity</label>
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <!-- Plus-Minus control -->
+                                                                <div class="form-group">
+                                                                    <input type="number" class="form-control form-control-lg" value="1">
+                                                                </div>
+                                                                <!-- Add to cart button -->
+                                                                <button type="button" class="btn btn-styled btn-lg btn-block btn-base-1 btn-cart mt-2">
+                                                                Add to cart
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            
+                    <script>
+                    $('#slideshow').desoSlide({
+                    thumbs: $('#slideshow_thumbs .swiper-slide > a'),
+                    thumbEvent: 'click',
+                    first: 0,
+                    effect: 'none',
+                    overlay: 'none',
+                    controls: {
+                    show: false,
+                    keys: false
+                    },
+                    });
+                    </script>
+                </body>
+            </html>

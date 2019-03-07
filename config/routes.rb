@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
 	resources :cat_pictures, only: [:index, :show]
 	resources :carts, only: [:show]
+	
+
   root to: 'cat_pictures#index'
   devise_for :users
 end
