@@ -1,10 +1,11 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :full_name, use: :slugged
 	after_create :send_registration_confirm
 	after_create -> { create_user_cart(self) }
 	has_one_attached :avatar
   # Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-
 	
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

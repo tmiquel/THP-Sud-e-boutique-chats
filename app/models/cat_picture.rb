@@ -1,4 +1,6 @@
 class CatPicture < ApplicationRecord
+	extend FriendlyId
+    friendly_id :title, use: :slugged
 	validates :title, presence: true
 	validates :price, presence: true
 	validate :valid_price

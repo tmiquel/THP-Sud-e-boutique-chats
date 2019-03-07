@@ -1,15 +1,361 @@
-<h1>Page Profil</h1>
 
-<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
-<h3>Avatar actuel</h3>
-<%if @user.avatar.attached?%>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
+<!DOCTYPE html>
+  <html>
+    <head>
+    </head>
+    <body>
 
-<h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
+    <!-- MAIN WRAPPER -->
+    <div class="body-wrap" data-template-mode="cards">
+      <div id="st-container" class="st-container">
+
+          <nav class="st-menu st-effect-1" id="menu-1">
+      <div class="st-profile">
+          <div class="st-profile-user-wrapper">
+              <div class="profile-user-image">
+                  <%= image_tag "prv/people/person-1.jpg", class:"img-circle" %>
+              </div>
+              <div class="profile-user-info">
+                  <span class="profile-user-name">Bertram Ozzie</span>
+                  <span class="profile-user-email">username@example.com</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="st-menu-list mt-2">
+          <ul>
+              <li>
+                  <a href="2">
+                      <i class="ion-ios-bookmarks-outline"></i> Theme documentation
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="ion-ios-cart-outline"></i> Purchase Tribus
+                  </a>
+              </li>
+          </ul>
+      </div>
+
+      <h3 class="st-menu-title">Account</h3>
+      <div class="st-menu-list">
+          <ul>
+              <li>
+                  <a href="#">
+                      <i class="ion-ios-person-outline"></i> User profile
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="ion-ios-location-outline"></i> My addresses
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="ion-card"></i> My cards
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="ion-ios-unlocked-outline"></i> Password update
+                  </a>
+              </li>
+          </ul>
+      </div>
+
+      <h3 class="st-menu-title">Support center</h3>
+      <div class="st-menu-list">
+          <ul>
+              <li>
+                  <a href="#">
+                      <i class="ion-ios-information-outline"></i> About Tribus
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="ion-ios-email-outline"></i> Contact &amp; support
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-camera"></i> Getting started
+                  </a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+    <div class="st-pusher">
+      <div class="st-content">
+          <div class="st-content-inner">
+
+          <!-- Profile picture -->
+          <div class="profile-picture profile-picture--style-2">
+              <%= image_tag "prv/people/person-1.jpg", class:"img-circle" %>
+              <div class= "container">
+              <div class="link-menu link-menu--style-3 py-4 border-bottom centered text-center">
+                  <%= form_tag user_avatars_path(@user), multipart: true do %>
+                    <%= file_field_tag :avatar  %> 
+                   <%= link_to  do %> <%= submit_tag "update" %> <% end %>
+                  <% end %>
+              </div>
+            </div>
+            </div>
+
+          <!-- Profile details -->
+          <div class="profile-details">
+              <h2 class="heading heading-4 strong-500 profile-name"><%= current_user.first_name %> <%= current_user.last_name %></h2>
+              <h3 class="heading heading-6 strong-400 profile-occupation mt-0"><%= current_user.email %></h3>
+              <h3 class="heading heading-light heading-6 strong-400 profile-location mt-3"><%= current_user.phone_number %></h3>
+          </div>
+          <div class= "container">
+            <div class="link-menu link-menu--style-3 py-4 border-bottom centered text-center">
+                <%= link_to "Settings", edit_user_registration_path %>
+            </div>
+          </div>
+          
+
+          <!-- Account settings -->
+          <div class="row">
+              <div class="col-lg-12">
+                  <form class="form-default" data-toggle="validator" role="form">
+          <!-- Order history table -->
+          <div class="card no-border">
+              <div>
+                  <table class="table table-sm table-hover">
+                      <thead>
+                          <tr>
+                              <th>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </th>
+                              <th>Order</th>
+                              <th>Date</th>
+                              <th>Amount</th>
+                              <th>Status</th>
+                          </tr>
+                      </thead>
+
+                      <tbody>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-1500</a>
+                              </td>
+                              <td> 06/08/2018</td>
+                              <td>
+                                  25.00 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-green"></i> paid
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-1602</a>
+                              </td>
+                              <td>10/10/2018</td>
+                              <td>
+                                  60.20 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-green"></i> paid
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#"><a href="#">WPX-1650</a></a>
+                              </td>
+                              <td>15/10/2018</td>
+                              <td>
+                                  99.00 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-red"></i> canceled
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-1741</a>
+                              </td>
+                              <td>23/08/2018</td>
+                              <td>
+                                  35.00 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-blue"></i> shipped
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-2060</a>
+                              </td>
+                              <td>25/11/2018</td>
+                              <td>
+                                  17.50 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-orange"></i> pending
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-1500</a>
+                              </td>
+                              <td>06/08/2018</td>
+                              <td>
+                                  25.00 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-green"></i> paid
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-1602</a>
+                              </td>
+                              <td>10/10/2018</td>
+                              <td>
+                                  60.20 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-green"></i> paid
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#"><a href="#">WPX-1650</a></a>
+                              </td>
+                              <td>15/10/2018</td>
+                              <td>
+                                  99.00 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-red"></i> canceled
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-1741</a>
+                              </td>
+                              <td>23/08/2018</td>
+                              <td>
+                                  35.00 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-blue"></i> shipped
+                                  </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="checkbox">
+                                      <input type="checkbox" name="checkbox_example_1">
+                                      <label></label>
+                                  </div>
+                              </td>
+                              <td>
+                                  <a href="#">WPX-2060</a>
+                              </td>
+                              <td>25/11/2018</td>
+                              <td>
+                                  17.50 EUR
+                              </td>
+                              <td>
+                                  <span class="badge badge--2 mr-4">
+                                      <i class="bg-orange"></i> pending
+                                  </span>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>  
+    </div><!-- END: st-pusher -->
+    </div><!-- END: st-container -->
+    </div><!-- END: body-wrap -->
+  </body>
+</html>

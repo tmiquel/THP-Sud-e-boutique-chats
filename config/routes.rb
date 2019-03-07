@@ -2,9 +2,9 @@
 Rails.application.routes.draw do
   get 'purchases/create'
   devise_for :users
-	resources :users, only: [:show] do
+	resources :users do
 		resources :carts, only: [:show]
-    resources :avatars, only: [:create]
+    	resources :avatars, only: [:create]
 	end
 	
 	
