@@ -9,7 +9,11 @@
 <%end%>
 
 <h3>Changer d'avatar ?</h3>
+
+<div class: "container col-md-6">
 <%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
+  <%= file_field_tag :avatar, class: "border-bottom centered text-center btn-success"  %>
+  <%= button_tag(type: "submit", class: "btn-success") do %> mettre à jour <i class="icon-repeat"></i>
+  <% end %>
+</div>
 <% end %>
