@@ -108,7 +108,7 @@
                                                   <div class="col-md-6 col-lg-4">
                                                     <div class="form-group">
                                                         <%= f.label :email %>
-                                                        <%= f.email_field :email, class: "form-control form-control-lg" %>
+                                                        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
                                                     </div>
                                                 </div>
                                                   <div class="col-md-6 col-lg-4">
@@ -135,7 +135,7 @@
                                                 <div class="col-md-6 col-lg-4">
                                                     <div class="form-group">
                                                         <%= f.label :password %>
-                                                        <%= f.password_field :password, autocomplete: "password", class: "form-control form-control-lg" %>
+                                                        <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg" %>
                                                         <% if @minimum_password_length %>
                                                         <%= @minimum_password_length %> characters minimum
                                                         <% end %>

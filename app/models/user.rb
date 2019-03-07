@@ -19,5 +19,8 @@ private
 	def send_registration_confirm
     UserMailer.registration_confirm(self).deliver_now
   end
+	def full_name
+		self.first_name + self.last_name
+	end
 
 end
