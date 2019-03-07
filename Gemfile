@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+source 'http://rubygems.org'
+git_source(:github) { |repo| "http://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
@@ -15,6 +15,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -35,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'stripe'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -70,9 +72,13 @@ gem 'dotenv-rails'
 gem 'mini_racer'
 gem 'execjs'
 gem 'devise'
-gem 'stripe'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'factory_bot_rails'
 gem 'dotenv-rails'
 gem 'ionicons-rails'
+gem "aws-sdk-s3", require: false
+gem 'font-awesome-rails' 
+gem 'linea'
+gem 'simple-line-icons-rails'
+gem 'stripe'

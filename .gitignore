@@ -1,7 +1,7 @@
 *.rbc
 capybara-*.html
 .rspec
-/log
+/log/*.logg
 /tmp
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -60,4 +60,3 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
-

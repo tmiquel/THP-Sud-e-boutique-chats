@@ -54,4 +54,6 @@
 //= require isotope/isotope.min
 //= require imagesloaded/imagesloaded.pkgd.min
 
+//= require deso-slide/js/jquery.desoslide.min
+
 //= require boomerang.min
