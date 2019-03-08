@@ -29,7 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
 	def access_my_cart_only
-		puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     unless @user_id == current_user
       redirect_to root_url, alert: 'Accessing or modifying another user data is not allowed.'
     end
