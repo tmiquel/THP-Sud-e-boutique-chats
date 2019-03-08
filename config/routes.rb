@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 	resources :users do
 
-		resources :carts, only: [:show]
-    	resources :avatars, only: [:create]
+		resource :cart, only: [:show]
+    resources :avatars, only: [:create]
 
 	end
 

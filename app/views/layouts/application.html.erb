@@ -163,7 +163,7 @@
                                                              
                                                             <li class="dropdown">
                                                             <% if current_user %>
-                                                                <%= link_to user_cart_path(current_user) do%>
+                                                                <%= link_to user_cart_path(current_user.id) do%>
                                                                     <i class="fa fa-shopping-cart"></i>
                                                                 <% end %>
                                                             <%end%>
