@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy access_my_profile_only]
   before_action :authenticate_user!, only: %i[show edit update destroy index]
   before_action :access_my_profile_only, only: %i[show edit update destroy index]
-
-
 
   def new
     @user = User.new
@@ -59,22 +59,4 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
-
-   def set_user
-    @user = User.friendly.find(params[:id])
-  end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def user_params
-    params.require(:user).permit(:email, :password, :description, :first_name, :last_name)
-  end
-
-  def access_my_profile_only
-    unless @user == current_user
-      redirect_to root_url, alert: 'Accessing or modifying another user data is not allowed.'
-    end
-  end
-
 end

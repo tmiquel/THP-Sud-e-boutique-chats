@@ -9,7 +9,6 @@
                                         <div class="col-lg-5">
                                             <!-- Product gallery -->
                                             <div class="gallery-container">
-                                                <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
                                                 <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
                                                     <div class="swiper-wrapper">
                                                         <div class="swiper-slide">
@@ -35,11 +34,11 @@
                                                         Description:
                                                         </h3>
                                                         <p>
-                                                            Photo de chat n°<%= @cat_picture.id%>. Pellentesque habitant morbi tristique senectus et netus malesuada fames turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor.
+                                                            Photo de chat n°<%= @cat_picture.id %>. Pellentesque habitant morbi tristique senectus et netus malesuada fames turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor.
                                                         </p>
                                                     </div>
                                                     <!-- Price tag -->
-                                                    <div class="product-price py-3">$<strong>160</strong><small>.00</small></div>
+                                                    <div class="product-price py-3"><strong><%= @cat_picture.price%></strong> €</div>
                                                     <form class="form-horizontal">
                                                         <!-- Quantity + Add to cart -->
                                                         <label class="text-uppercase strong-600">Quantity</label>
@@ -47,12 +46,10 @@
                                                             <div class="col-4">
                                                                 <!-- Plus-Minus control -->
                                                                 <div class="form-group">
-                                                                    <input type="number" class="form-control form-control-lg" value="1">
+                                            <input id="amount_id" name: "amount" class="form-control form-control-lg" value="1">
                                                                 </div>
                                                                 <!-- Add to cart button -->
-                                                                <button type="button" class="btn btn-styled btn-lg btn-block btn-base-1 btn-cart mt-2">
-                                                                Add to cart
-                                                                </button>
+<button class="btn btn-styled btn-lg btn-block btn-base-1 btn-cart mt-2">"Add to cart"</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -63,18 +60,5 @@
                                 </div>
                             </section>
                             
-                    <script>
-                    $('#slideshow').desoSlide({
-                    thumbs: $('#slideshow_thumbs .swiper-slide > a'),
-                    thumbEvent: 'click',
-                    first: 0,
-                    effect: 'none',
-                    overlay: 'none',
-                    controls: {
-                    show: false,
-                    keys: false
-                    },
-                    });
-                    </script>
                 </body>
             </html>

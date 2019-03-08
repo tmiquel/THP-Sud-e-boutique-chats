@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :single_cart_pic do
     cart { Cart.all.sample }
-		cat_picture { CatPicture.all.sample }
-		amount { (Faker::Number.positive.to_i%10) }
+    cat_picture { CatPicture.all.sample }
+    amount { (Faker::Number.positive.to_i % 10) }
   end
 end
