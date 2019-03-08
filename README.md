@@ -19,6 +19,9 @@ ______               ____  ___
 
 [https://cats-e-store-dev.herokuapp.com/](https://cats-e-store-dev.herokuapp.com/)
 
+
+[https://cats-e-store.herokuapp.com/](https://cats-e-store.herokuapp.com/) Version master - exactement la même a priori
+
 # Content :
 
 A Ruby-on-Rails website project ! The goal : selling (cute) cat pictures. 
@@ -37,6 +40,7 @@ If you want to make this project work locally
 
 - **download this repo**, either from a .zip file or by cloning it
 - **go to the root of the new folder with your favorite terminal**
+- (you'll probably need to go do a "$ git checkout development" if you clone it, to be sure)
 - $ bundle install
 - $ rails db:create
 - $ rails db:migrate
