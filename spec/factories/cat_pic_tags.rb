@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :cat_pic_tag do
     cat_picture { CatPicture.all.sample }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy access_my_profile_only]
   before_action :authenticate_user!, only: %i[show edit update destroy index]
@@ -55,5 +57,4 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 end

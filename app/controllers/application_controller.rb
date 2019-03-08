@@ -1,21 +1,24 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-	
-	private
+
+  private
+
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :phone_number])
-		devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone_number])
-	end
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name phone_number])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name phone_number])
+  end
 
-	def set_user
+  def set_user
     @user = User.friendly.find(params[:id])
   end
 
-	def set_user_cart
-		@user_id = User.friendly.find(params[:user_id])
-	end
+  def set_user_cart
+    @user_id = User.friendly.find(params[:user_id])
+  end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
@@ -28,11 +31,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-	def access_my_cart_only
+  def access_my_cart_only
     unless @user_id == current_user
       redirect_to root_url, alert: 'Accessing or modifying another user data is not allowed.'
     end
   end
-
 end
-
