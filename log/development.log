@@ -21886,3 +21886,63 @@ Processing by CatPicturesController#show as HTML
 Completed 200 OK in 253ms (Views: 242.2ms | ActiveRecord: 6.8ms)
 
 
+Started GET "/cat_pictures/12" for 127.0.0.1 at 2019-03-08 04:16:36 +0100
+Processing by CatPicturesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCatPicture Load (0.3ms)[0m  [1m[34mSELECT  "cat_pictures".* FROM "cat_pictures" WHERE "cat_pictures"."slug" = $1 LIMIT $2[0m  [["slug", "12"], ["LIMIT", 1]]
+  ↳ app/controllers/cat_pictures_controller.rb:8
+  [1m[36mCatPicture Load (0.2ms)[0m  [1m[34mSELECT  "cat_pictures".* FROM "cat_pictures" WHERE "cat_pictures"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/cat_pictures_controller.rb:8
+  Rendering cat_pictures/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "CatPicture"], ["name", "picture_file"], ["LIMIT", 1]]
+  ↳ app/views/cat_pictures/show.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cat_pictures/show.html.erb:15
+  Rendered cat_pictures/show.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:154
+Completed 200 OK in 151ms (Views: 146.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1bcffb62844d884d622638604ddf7739006d3be3/img.jpeg" for 127.0.0.1 at 2019-03-08 04:16:37 +0100
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1bcffb62844d884d622638604ddf7739006d3be3", "filename"=>"img"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ /home/stug/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: cW1N9dwGiKERcwG81EWkETwn (https://ecommercethp.s3.eu-west-3.amazonaws.com/cW1N9dwGiKERcwG81EWkETwn?response-content-disposition=inline%3B%20filename%3D%22img.jpeg%22%3B%20filename%2A%3DUTF-8%27%27img.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI7C5G62PYV7Z7ORA%2F20190308%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20190308T031637Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8f81bb871fa91c2c3142ee7a40088bb7206d4a6dfbef3da7d97cd7bf0c4e0dd6)[0m
+Redirected to https://ecommercethp.s3.eu-west-3.amazonaws.com/cW1N9dwGiKERcwG81EWkETwn?response-content-disposition=inline%3B%20filename%3D%22img.jpeg%22%3B%20filename%2A%3DUTF-8%27%27img.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI7C5G62PYV7Z7ORA%2F20190308%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20190308T031637Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8f81bb871fa91c2c3142ee7a40088bb7206d4a6dfbef3da7d97cd7bf0c4e0dd6
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/images/patterns/pattern-1.png" for 127.0.0.1 at 2019-03-08 04:16:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/patterns/pattern-1.png"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
