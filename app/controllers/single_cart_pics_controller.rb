@@ -18,6 +18,7 @@ class SingleCartPicsController < ApplicationController
   def destroy
 		@single_cart_pic = SingleCartPic.find(params[:id])
 		@single_cart_pic.delete
+		redirect_to user_cart_path(current_user)
   end
 
 end
