@@ -1,12 +1,6 @@
 class SingleCartPicsController < ApplicationController
 
 	def create
-		@cat_picture = CatPicture.find(params[:cat_picture_id]
-		if single_cart_pic = SingleCartPic.create(cat_picture: @cat_picture), cart: current_user.cart, amount: 1)
-			redirect_to user_cart_path(current_user)
-		else
-			redirect_to cat_picture_path(@cat_picture)
-		end
 	end
 
   def update
@@ -18,9 +12,7 @@ class SingleCartPicsController < ApplicationController
     		@single_cart_pic.decrement!(:amount)
 			end
 		end
-		puts @single_cart_pic.errors.messages
-		tp @single_cart_pic
-    redirect_to user_cart_path(@single_cart_pic.cart)
+    redirect_to user_cart_path(current_user) 
 	end
 
   def destroy

@@ -8,8 +8,8 @@
                                         </h3>
 
                                         <ol class="breadcrumb breadcrumb--style-2">
-                                            <li class="breadcrumb-item"><%= link_to "Choisissez  >>", root_path %></li>
-                                            <li class="breadcrumb-item"><%= link_to "Commandez  >>", user_cart_path %></li>
+                                            <li class="breadcrumb-item"><%= link_to "Choisissez", root_path %></li>
+                                            <li class="breadcrumb-item"><%= link_to "Commandez", user_cart_path %></li>
                                             <li class="breadcrumb-item"><%= link_to "Achetez", user_cart_path(anchor: "checkout") %></li>
                                         </ol>
                                     </div>
@@ -107,7 +107,22 @@
 <% end %>
                                             </div>
                                             <div class="col-6 text-right">
-                            <%= link_to "Order now", purchases_path(:user_id => current_user.id, :amount => @total_amount), method: :post, class: "btn btn-styled btn-base-1" %>
+                                                <%= form_tag purchases_path(:user_id => current_user.id), method: :post do %>
+                                              <article>
+                                                <% if flash[:error].present? %>
+                                                  <div id="error_explanation">
+                                                    <p><%= flash[:error] %></p>
+                                                  </div>
+                                            <% end %>
+                                            </article>
+                                                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                                      data-description="buy a pic"
+                                                      data-amount="<%= (@total_amount*100) %>"
+                                                      data-locale="auto">
+                                                    </script>
+                                            <%end%>
+<% #link_to "Order now", purchases_path(:user_id => current_user.id, :amount => @total_amount), method: :post, class: "btn btn-styled btn-base-1" %>
                                             </div>
                                         </div>
                                     </form>
@@ -124,5 +139,3 @@
 
 <!-- SCRIPTS -->
 <a href="#" class="back-to-top btn-back-to-top"></a>
-
-
